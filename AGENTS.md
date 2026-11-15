@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- UI reads data only through `PlacesDataService` in `src/lib/data/places-service.ts`; swap implementations, never fetch from components — keeps providers replaceable.
+- Never ship sample/fake businesses, reports, pins, or activity; unconnected features show honest setup states.
+- Wait status colors use `--status-*` tokens, never `--primary` (which follows the user's accent choice).
+- Theme/accent live in `src/lib/preferences.tsx` (class `dark` + `data-accent` on `<html>`), with a boot script in `__root` to avoid flashes.
