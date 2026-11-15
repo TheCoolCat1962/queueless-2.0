@@ -22,7 +22,7 @@ function apply(p: Prefs) {
   const root = document.documentElement;
   const dark = p.theme === "dark" || (p.theme === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
   root.classList.toggle("dark", dark);
-  root.dataset.accent = p.accent;
+  root.dataset["accent"] = p.accent;
 }
 
 /** Inline script run before paint to avoid a theme flash. */
