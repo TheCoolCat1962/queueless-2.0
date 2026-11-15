@@ -10,10 +10,10 @@ const DEFAULTS: Prefs = { theme: "system", accent: "blue" };
 
 export function parsePrefs(raw: string | null): Prefs {
   try {
-    const p = JSON.parse(raw ?? "{}");
+    const p = JSON.parse(raw ?? "{}") as { theme?: string; accent?: string };
     return {
-      theme: ["system", "light", "dark"].includes(p.theme) ? p.theme : DEFAULTS.theme,
-      accent: (ACCENTS as readonly string[]).includes(p.accent) ? p.accent : DEFAULTS.accent,
+      theme: ["system", "light", "dark"].includes(p.theme ?? "") ? (p.theme as ThemePref) : DEFAULTS.theme,
+      accent: (ACCENTS as readonly string[]).includes(p.accent ?? "") ? (p.accent as Accent) : DEFAULTS.accent,
     };
   } catch { return DEFAULTS; }
 }
