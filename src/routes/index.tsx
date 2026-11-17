@@ -34,8 +34,8 @@ function Explore() {
 
   return (
     <AppShell>
-      <div className="md:grid md:h-dvh md:grid-cols-[minmax(360px,440px)_1fr]">
-        <div className="space-y-5 px-4 pt-5 md:overflow-y-auto md:px-6 md:pb-8">
+      <div className="xl:grid xl:h-dvh xl:grid-cols-[minmax(360px,440px)_minmax(0,1fr)]">
+        <div className="min-w-0 space-y-5 px-4 pt-5 md:px-6 md:pb-8 xl:overflow-y-auto">
           <header>
             <div className="md:hidden"><Logo /></div>
             <div className="mt-4 flex items-end justify-between gap-3 md:mt-2">
@@ -53,7 +53,7 @@ function Explore() {
             </p>
           )}
 
-          <MapPanel className="h-[38dvh] md:hidden" />
+          <MapPanel className="h-[38dvh] xl:hidden" />
 
           <section aria-labelledby="recent-h" className="space-y-3">
             <h2 id="recent-h" className="text-lg font-semibold">Recent wait reports</h2>
@@ -75,7 +75,7 @@ function Explore() {
             )}
           </section>
         </div>
-        <div className="hidden md:block md:p-4"><MapPanel className="h-full" /></div>
+        <div className="hidden xl:block xl:p-4"><MapPanel className="h-full" /></div>
       </div>
     </AppShell>
   );

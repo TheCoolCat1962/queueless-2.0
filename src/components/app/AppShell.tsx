@@ -25,7 +25,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           ))}
         </nav>
       </aside>
-      <main id="main" className="flex-1 pb-24 md:pb-0">{children}</main>
+      <main id="main" className="min-w-0 flex-1 pb-24 md:pb-0">{children}</main>
       <nav aria-label="Main" className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card/95 pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden">
         <ul className="grid grid-cols-4">
           {NAV.map(({ to, label, icon: Icon }) => (
