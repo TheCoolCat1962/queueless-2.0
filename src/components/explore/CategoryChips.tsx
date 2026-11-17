@@ -10,7 +10,7 @@ export const CATEGORIES: { id: CategoryId; label: string }[] = [
 
 export function CategoryChips({ value, onChange }: { value: CategoryId; onChange: (c: CategoryId) => void }) {
   return (
-    <div role="group" aria-label="Filter by category" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none]">
+    <div role="group" aria-label="Filter by category" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] md:flex-wrap">
       {CATEGORIES.map((c) => {
         const active = c.id === value;
         return (
